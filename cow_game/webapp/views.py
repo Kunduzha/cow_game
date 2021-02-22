@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+def cow_game():
+    pass
+
+
+def cow2_game():
+    pass
