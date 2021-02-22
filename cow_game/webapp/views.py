@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def cow_game(request):
     secret_nums = [5, 1, 2, 9]
-    if request.method=='GET':
+    if request.method =='GET':
         return render(request, 'index.html')
 
     if request.method == 'POST':
@@ -16,9 +16,9 @@ def cow_game(request):
             context["result"] = guess_numbers(secret_nums, numbers)
 
         except ValueError:
-            context["result"] += f'Постарайтесь ввести только числа'
+            context["result"] = f'Постарайтесь ввести только числа'
         except KeyError:
-            context["result"] += f'Постарайтесь  ввести только числа'
+            context["result"] = f'Постарайтесь  ввести только числа'
 
         return render(request, 'index.html', context)
 
