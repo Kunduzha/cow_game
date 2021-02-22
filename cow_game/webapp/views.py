@@ -16,9 +16,9 @@ def cow_game(request):
             context["result"] = guess_numbers(secret_nums, numbers)
 
         except ValueError:
-            context["result"] += f'Нужно ввести только числа'
+            context["result"] += f'Постарайтесь ввести только числа'
         except KeyError:
-            context["result"] += f'Нужно ввести только числа'
+            context["result"] += f'Постарайтесь  ввести только числа'
 
         return render(request, 'index.html', context)
 
@@ -35,4 +35,4 @@ def guess_numbers(secret_nums, numbers):
             bull += 1
         elif numbers[i] in secret_nums:
             cow += 1
-    return f'коров {cow} шт,бык: {bull} шт'
+    return f'Всего коров {cow} шт, всего бык: {bull} шт'
